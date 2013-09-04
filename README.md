@@ -13,14 +13,14 @@ This creates a filter node.
 The <code>new</code> keyword is optional.
 
 
-### .in(e)
+### node.in(e)
 
 To pass messages into the filter, call the filter's <code>in</code> method:
 
     midiFilter.in(e);
 
 
-### .out(fn)
+### node.out(fn)
 
 To listen to the output, register a listener with the filter's <code>out</code> method:
 
