@@ -13,11 +13,11 @@ This creates a filter node.
 The <code>new</code> keyword is optional.
 
 
-### .in(message)
+### .in(e)
 
-To filter MIDI messages, call the filter's <code>in</code> method:
+To pass messages into the filter, call the filter's <code>in</code> method:
 
-    midiFilter.in(message);
+    midiFilter.in(e);
 
 
 ### .out(fn)
