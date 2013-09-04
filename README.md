@@ -27,7 +27,7 @@ To listen to the output, register a listener with the filter's <code>out</code> 
     midiFilter.out(fn);
 
 The callback function <code>fn</code> will be called whenever a MIDI message matches
-the filter options.
+the filter options. It is passed the message <code>e</code> as it's first argument.
 
 
 ## Options
@@ -35,11 +35,17 @@ the filter options.
 A filter understands the options:
 
     {
-        port:    number | string
+        port:    number | string | target
         channel: number (1-16) | fn
-        message: string (message type) | fn
+        message: string | fn
         data1:   number (0-127) | fn
         data2:   number (0-127) | fn
     }
 
+If <code>port</code> is a number, the message is filtered by <code>e.target.id</code>.
+If <code>port</code> is a string, the message is filtered by <code>e.target.name</code>.
+If <code>port</code> is an object, the message is filtered by <code>e.target</code>.
+<code>message</code> should be one of <code>'noteoff'</code>, <code>'noteon'</code>,
+<code>'polytouch'</code>, <code>'cc'</code>, <code>'pc'</code>, <code>'channeltouch'</code> or
+<code>'pitch'</code>.
 Functions should return a boolean.
