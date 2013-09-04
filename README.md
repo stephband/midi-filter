@@ -45,7 +45,9 @@ A filter understands the options:
 If <code>port</code> is a number, the message is filtered by <code>e.target.id</code>.
 If <code>port</code> is a string, the message is filtered by <code>e.target.name</code>.
 If <code>port</code> is an object, the message is filtered by <code>e.target</code>.
+
 <code>message</code> should be one of <code>'noteoff'</code>, <code>'noteon'</code>,
 <code>'polytouch'</code>, <code>'cc'</code>, <code>'pc'</code>, <code>'channeltouch'</code> or
 <code>'pitch'</code>.
+
 Functions should return a boolean.
