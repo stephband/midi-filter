@@ -67,8 +67,8 @@
 		return data[0] % 16 + 1;
 	}
 
-	function createOutput(node) {
-		listeners = [];
+	function createNodeOut(node) {
+		var listeners = [];
 
 		function send(e) {
 			var l = listeners.length,
@@ -89,7 +89,7 @@
 
 	function Node(options) {
 		var node = Object.create(Object.prototype);
-		var send = createOutput(node);
+		var send = createNodeOut(node);
 
 		node.in = function(e) {
 			var data = e.data;
